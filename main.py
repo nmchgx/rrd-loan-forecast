@@ -27,6 +27,19 @@ if __name__ == "__main__":
     print '方法：%s' % method_name[method]
     for test_size in test_size_arr:
         if (method == 'SVM'):
-            svm.run(x, y, test_size)
+            train_score, test_score, a_score, b_score, c_score = svm.run(
+                x, y, test_size)
         elif (method == 'RF'):
-            rf.run(x, y, test_size)
+            train_score, test_score, a_score, b_score, c_score = rf.run(
+                x, y, test_size)
+        else:
+            train_score, test_score, a_score, b_score, c_score = svm.run(
+                x, y, test_size)
+
+        print '============================================='
+        print '训练集 %s | 测试集 %s' % (1 - test_size, test_size)
+        print '训练集正确率：%s' % train_score
+        print '测试集正确率：%s' % test_score
+        print 'good 正确率：%s' % a_score
+        print 'bad 正确率：%s' % b_score
+        print 'neutral 正确率：%s' % c_score
