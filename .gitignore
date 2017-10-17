@@ -80,6 +80,7 @@ celerybeat-schedule
 *.sage.py
 
 # dotenv
+.idea
 .env
 
 # virtualenv

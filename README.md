@@ -4,8 +4,24 @@
 
 - Python 2.7
 
-## Usage
+## Install
 
 ```bash
 pip install -r requirements.txt
 ```
+
+
+
+## Usage
+
+- SVM
+
+```bash
+python main.py svm
+```
+- Random Forest
+
+```bash
+python main.py rf
+```
+
