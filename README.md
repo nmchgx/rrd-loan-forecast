@@ -19,9 +19,13 @@ pip install -r requirements.txt
 ```bash
 python main.py svm
 ```
+![Run SVM](svm.png)
+
 - Random Forest
 
 ```bash
 python main.py rf
 ```
+
+![Run Random Forest](rf.png)
 
