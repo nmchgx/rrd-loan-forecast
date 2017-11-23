@@ -14,18 +14,16 @@ pip install -r requirements.txt
 
 ## Usage
 
+### Classify
+
 - SVM
 
 ```bash
-python main.py svm
+python classify.py svm
 ```
-![Run SVM](svm.png)
-
 - Random Forest
 
 ```bash
-python main.py rf
+python classify.py rf
 ```
-
-![Run Random Forest](rf.png)
 

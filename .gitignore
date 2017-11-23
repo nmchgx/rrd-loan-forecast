@@ -102,4 +102,7 @@ ENV/
 .mypy_cache/
 
 # data
-*.csv
+data/
+
+# output
+output/
