@@ -6,6 +6,7 @@ import datetime
 from dateutil import parser
 import matplotlib.pyplot as plt
 import seaborn as sns
+plt.switch_backend('agg')
 
 
 def converter(data, type=0):
