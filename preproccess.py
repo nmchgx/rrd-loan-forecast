@@ -74,12 +74,12 @@ def statistics(data):
 
 def main():
     path = '/opt/thucollect/data/'
-    # path = 'data/'
     application_info = pd.read_csv(path + 'application_info.csv', index_col='loan_id', low_memory=False)
     coll_perf = pd.read_csv(path + 'coll_perf.csv', low_memory=False)
     # data
     df = pd.merge(coll_perf, application_info.loc[:, :'age'], left_on='loan_id', right_index=True)
     labels = getLabels(df, type=1)
+    statistics(df)
     data = df.drop('user_key', 1)
     data = df.loc[:, 'is_retry':].replace(
         {True: 1, False: 0, 'True': 1, 'False': 0, 'Invalid': -1, 'NULL':-1, 'F': 0, 'M': 1, np.nan: -1})
