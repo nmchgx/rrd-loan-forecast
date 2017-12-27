@@ -61,6 +61,9 @@ def statistics(data):
     data = pd.DataFrame({'payoff_time': data['payoff_time'], 'labels': labels})
     data.to_csv('output/test.csv')
 
+    np.save('data/arr1.npy', np.array(arr1).astype(int))
+    np.save('data/arr2.npy', np.array(arr2).astype(int))
+
     sns.distplot(arr1, label='arr1')
     plt.title('arr1')
     plt.savefig('output/arr1.png')
