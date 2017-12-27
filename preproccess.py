@@ -46,7 +46,7 @@ def getLabels(data, type=0):
 def statistics(data):
     arr1 = []
     arr2 = []
-    labels = []
+    arr3 = []
     now = datetime.datetime.now()
     for i in range(len(data)):
         if (pd.notnull(data['payoff_time'][i])):
@@ -56,13 +56,11 @@ def statistics(data):
         else:
             dif = now - parser.parse(data['due_date'][i])
             arr2.append(dif.days)
-        labels.append(dif.days)
-
-    data = pd.DataFrame({'payoff_time': data['payoff_time'], 'labels': labels})
-    data.to_csv('output/test.csv')
+        arr3.append(dif.days)
 
     np.save('data/arr1.npy', np.array(arr1).astype(int))
     np.save('data/arr2.npy', np.array(arr2).astype(int))
+    np.save('data/arr3.npy', np.array(arr3).astype(int))
 
     sns.distplot(arr1, label='arr1')
     plt.title('arr1')
