@@ -34,11 +34,12 @@ def getLabels(data, type=0):
     for i in range(len(data)):
         dif = 0
         if (pd.notnull(data['payoff_time'][i])):
-            dif = parser.parse(data['payoff_time'][i]) - \
-                parser.parse(data['due_date'][i])
-            labels.append(converter(dif.days, type=type))
+            labels.append(0)
+            # dif = parser.parse(data['payoff_time'][i]) - \
+            #     parser.parse(data['due_date'][i])
+            # labels.append(converter(dif.days, type=type))
         else:
-            labels.append(3)
+            labels.append(1)
     return np.array(labels)
 
 
